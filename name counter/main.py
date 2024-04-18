@@ -34,7 +34,7 @@ def count_names(row: dict, state: State):
     name_count += 1
 
     # add the name count to the row data
-    row["count"] = name_count
+    row["Count"] = name_count
 
     # store the new count in state
     state.set(name, name_count)
