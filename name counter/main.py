@@ -33,14 +33,14 @@ def count_names(row: dict, state: State):
     # add one to the current name count
     name_count += 1
 
-    # add the name count to the row data
-    row["Count"] = name_count
-
     # store the new count in state
     state.set(name, name_count)
 
-    # return the updated row so more processing can be done on it
-    return row
+    # return an aggregate row so more processing can be done on it
+    return {
+        "Name": name,
+        "Count": name_count,
+    }
 
 
 # apply the result of the count_names function to the row
