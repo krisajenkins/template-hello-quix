@@ -55,9 +55,9 @@ def read_csv_file(file_path: str):
     # Continuously loop over the data
     while True:
         # Print a message to the console for each iteration
-        print(f"Publishing {row_count} rows.")
+        print(f"Publishing a batch of {row_count} data points.")
 
-        # Iterate over the rows and convert them to
+        # Iterate over the dataframes and convert them to records for a Kafka topic.
         for _, row in df.iterrows():
             # Create a dictionary that includes both column headers and row values
             row_data = {header: row[header] for header in headers}
@@ -67,8 +67,6 @@ def read_csv_file(file_path: str):
 
             # Yield the stream ID and the row data
             yield stream_id, row_data
-
-        print("All rows published")
 
         # Wait a moment before outputting more data.
         print("Sleeping before the next batch...", flush=True)

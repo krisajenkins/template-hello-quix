@@ -30,7 +30,7 @@ def count_names(row: dict, state: State):
     # default to 0 if the name wasn't in state
     name_count = state.get(name, 0)
 
-    # add one to the name count
+    # add one to the current name count
     name_count += 1
 
     # add the name count to the row data
