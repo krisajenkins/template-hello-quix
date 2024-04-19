@@ -60,6 +60,15 @@ deployments:
 # This section describes the Topics of the data pipeline
 topics:
   - name: counted-names
+    configuration:
+      partitions: 1
+      replicationFactor: 1
+      retentionInMinutes: 60
+      retentionInBytes: 5242880
     persisted: false
   - name: csv-data
-    persisted: false
+    configuration:
+      partitions: 1
+      replicationFactor: 1
+      retentionInMinutes: 60
+      retentionInBytes: 5242880
