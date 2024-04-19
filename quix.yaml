@@ -7,7 +7,7 @@ metadata:
 # This section describes the Deployments of the data pipeline
 deployments:
   - name: CSV data source
-    application: csv data source
+    application: csv_data_source
     deploymentType: Service
     version: latest
     resources:
@@ -22,7 +22,7 @@ deployments:
         required: true
         value: csv-data
   - name: Name counter
-    application: name counter
+    application: name_counter
     deploymentType: Service
     version: latest
     resources:
@@ -42,7 +42,7 @@ deployments:
         required: false
         value: counted-names
   - name: Console logger
-    application: console logger
+    application: console_logger
     deploymentType: Service
     version: latest
     resources:
