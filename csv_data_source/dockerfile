@@ -7,7 +7,7 @@ ENV PYTHONIOENCODING=UTF-8
 
 WORKDIR /app
 RUN python3 -m venv env
-ENV PATH="env/bin:$PATH"
+ENV PATH="/app/env/bin:$PATH"
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt --extra-index-url https://pkgs.dev.azure.com/quix-analytics/53f7fe95-59fe-4307-b479-2473b96de6d1/_packaging/public/pypi/simple/
@@ -17,7 +17,7 @@ FROM python:3.11.1-slim-buster AS runtime
 
 WORKDIR /app
 COPY --from=build /app/env /app/env
-ENV PATH="env/bin:$PATH"
+ENV PATH="/app/env/bin:$PATH"
 
 COPY . .
 

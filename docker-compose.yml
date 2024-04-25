@@ -69,7 +69,6 @@ services:
     environment:
       - KAFKA_BROKER_ADDRESS=redpanda:9092
       - output=csv-data
-      - use_local_kafka=true
     depends_on:
       - redpanda
 
@@ -82,8 +81,6 @@ services:
       - KAFKA_BROKER_ADDRESS=redpanda:9092
       - input=csv-data
       - output=counted-names
-
-      - use_local_kafka=true
     depends_on:
       - redpanda
 
@@ -95,6 +92,5 @@ services:
     environment:
       - KAFKA_BROKER_ADDRESS=redpanda:9092
       - input=counted-names
-      - use_local_kafka=true
     depends_on:
       - redpanda
